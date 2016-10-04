@@ -1,0 +1,67 @@
+/* Empty. Add your own CSS if you like */
+
+#map {
+  height: 40%;
+  width: 100%;
+}
+.scroll {
+  height: 100%;
+}
+.greySquare {
+  display: inline-block;
+  color: #444;
+  border: 1px solid #CCC;
+  background: #DDD;
+  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  vertical-align: middle;
+  min-width: 5vw;
+  min-height: 4vw;
+  text-align: center;
+  margin-left: 4px;
+}
+.blueSquare {
+  display: inline-block;
+  color: #444;
+  border: 1px solid #ff8080;
+  background: #ff9999;
+  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  vertical-align: middle;
+  min-width: 5vw;
+  min-height: 4vw;
+  text-align: center;
+  margin-left: 4px;
+}
+.normalSquare {
+  display: inline-block;
+  color: #444;
+  border: 1px solid #CCC;
+  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  vertical-align: middle;
+  min-width: 5vw;
+  min-height: 4vw;
+  text-align: center;
+  margin-left: 4px;
+}
+#search-bar {
+  background: none;
+  position: absolute;
+  width: 100%;
+  top: 44px;
+  height: 40px;
+  z-index: 3;
+}
+.displayNone {
+  display: none;
+}
+.orangeText {
+  color: orange;
+}
+.redText {
+  color: red;
+}
+.blackText {
+  color: black;
+}

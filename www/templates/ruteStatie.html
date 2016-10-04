@@ -1,0 +1,26 @@
+<ion-view view-title="Busses">
+  <!--  <div id="search-bar">
+     <div class="item item-input-inset">
+       <label class="item-input-wrapper" id="search-input">
+         <i class="icon ion-search placeholder-icon"></i>
+         <input type="text" placeholder="Cautati o statie" ng-model="searchQuery" ng-change="search()">
+       </label>
+     </div>
+   </div>
+-->
+  <ion-content overflow-scroll="true">
+    <ion-list>
+      <div ng-repeat="ruta in rute">
+        <div class="card">
+          <div class="item item-divider">
+            Station: {{ruta.StatieCurenta}}
+          </div>
+          <ion-item ng-repeat="rutaC in ruta.Linii" ng-href="#/app/viewStatieForRuta/{{rutaC.NrLinie}}/{{rutaC.Ruta}}/{{ruta.StatieCurenta.trim()}}/luni-vineri" class="item-thumbnail">
+            {{rutaC.NrLinie}} {{rutaC.Ruta}}
+          </ion-item>
+        </div>
+      </div>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

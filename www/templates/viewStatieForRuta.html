@@ -1,0 +1,29 @@
+<ion-view view-title="Station: {{statieCurentaForRuta.Statii[0].NumeStatie}}">
+  <ul class="tabs">
+    <li ng-class="{active:isSelected(1)}" class="tab-item" ng-click="select(1)">
+      Mon - Fri</li>
+    <li ng-class="{active:isSelected(2)}" class="tab-item" ng-click="select(2)">
+      Saturday</li>
+    <li ng-class="{active:isSelected(3)}" class="tab-item" ng-click="select(3)">
+      Sunday</li>
+  </ul>
+
+
+  <ion-content overflow-scroll="true">
+    <div class="card" ng-model="statieCurentaForRuta">
+      <div class="item item-divider">
+        Bus {{statieCurentaForRuta.NrLinie}} - {{statieCurentaForRuta.Ruta}}
+      </div>
+      <ion-item ng-repeat="ora in statieCurentaForRuta.Statii[0].IntervaleOrare[0].Ore" class="item-thumbnail">
+        Hour {{ora.Ora}}
+        <div class="row">
+          <span ng-repeat="minut in ora.Minute" ng-class='setClassForMinut(minut)'>
+              {{minut.Minut}}&nbsp;
+            <span/>
+          </div>
+        </ion-item>
+    </div>
+    <div style="margin-top:50px;"> &nbsp; </div>
+  </ion-content>
+
+</ion-view>

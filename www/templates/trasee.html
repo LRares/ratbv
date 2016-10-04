@@ -1,0 +1,41 @@
+<ion-view view-title="Found routes">
+  <!--  <div id="search-bar">
+     <div class="item item-input-inset">
+       <label class="item-input-wrapper" id="search-input">
+         <i class="icon ion-search placeholder-icon"></i>
+         <input type="text" placeholder="Cautati o statie" ng-model="searchQuery" ng-change="search()">
+       </label>
+     </div>
+   </div>
+-->
+  <ion-content overflow-scroll="true">
+    <div class="card">
+      <p>
+        {{mesajEroare}}
+      </p>
+
+    </div>
+    <ion-list ng-hide=foundeasy>
+      <div class="card">
+        <ion-item ng-repeat="rutaC in trasee" ng-href="#/app/viewStatieForRuta/{{rutaC.NrLinie}}/{{rutaC.Ruta.trim()}}/{{rutaC.Statii[0].NumeStatie.trim()}}/luni-vineri" class="item item-text-wrap">
+          {{rutaC.NrLinie}} {{rutaC.Ruta}}
+          <p>
+            {{rutaC.Descriere}}
+          </p>
+        </ion-item>
+      </div>
+    </ion-list>
+    <ion-list ng-hide=foundhard>
+      <ion-item ng-repeat="rutaC in trasee" class="item item-text-wrap">
+        <div class="item">
+          <a style="text-decoration:none" ng-href="#/app/viewStatieForRuta/{{rutaC[0].NrLinie}}/{{rutaC[0].Ruta.trim()}}/{{rutaC[0].Statii[0].NumeStatie.trim()}}/luni-vineri">  Bus {{rutaC[0].NrLinie}}</a> till station <b>{{rutaC[0].Statii[rutaC[0].Statii.length
+          -1].NumeStatie}}</b>  {{rutaC[0].Descriere}}
+          <br />
+          <a style="text-decoration:none" ng-href="#/app/viewStatieForRuta/{{rutaC[1].NrLinie}}/{{rutaC[1].Ruta.trim()}}/{{rutaC[1].Statii[0].NumeStatie.trim()}}/luni-vineri">Bus {{rutaC[1].NrLinie}} </a> till station <b> {{rutaC[1].Statii[rutaC[1].Statii.length-1].NumeStatie}} </b>
+          <br /> {{rutaC[1].Descriere}}
+        </div>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

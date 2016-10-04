@@ -1,0 +1,23 @@
+<ion-view view-title="{{rutaCurenta.NrLinie}} - {{rutaCurenta.Ruta}}">
+  <ion-nav-buttons side="secondary">
+    <button class="button button-icon icon ion-arrow-swap" ng-click="swapRuta(rutaCurenta)">
+    </button>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true">
+    <div class="card" ng-model="rutaCurenta">
+      <div class="item item-divider">
+        Bus {{rutaCurenta.NrLinie}} - {{rutaCurenta.Ruta}}
+      </div>
+      <div class="item item-thumbnail item-text-wrap">
+        <ion-list>
+          <ion-item ng-repeat="statie in rutaCurenta.Statii" ng-href="#/app/viewStatieForRuta/{{rutaCurenta.NrLinie}}/{{rutaCurenta.Ruta}}/{{statie.NumeStatie.trim()}}/luni-vineri" class="item-thumbnail">
+            <p>Station: {{statie.NumeStatie}}</p>
+          </ion-item>
+        </ion-list>
+      </div>
+
+
+    </div>
+
+  </ion-content>
+</ion-view>

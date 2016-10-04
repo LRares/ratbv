@@ -1,0 +1,68 @@
+<ion-view view-title="Bilete si abonamente">
+  <!--  <div id="search-bar">
+     <div class="item item-input-inset">
+       <label class="item-input-wrapper" id="search-input">
+         <i class="icon ion-search placeholder-icon"></i>
+         <input type="text" placeholder="Cautati o statie" ng-model="searchQuery" ng-change="search()">
+       </label>
+     </div>
+   </div>
+-->
+
+  <ion-content overflow-scroll="true">
+    <div class="card">
+      <div class="item item-divider">
+        Bilete
+        <button style="float:right" class="button button-small button-positive" ng-click="addBilet()">
+          <i class="ion-plus-round"></i>
+        </button>
+      </div>
+      <div class="item-thumbnail">
+
+      </div>
+      <ion-list>
+        <ion-item ng-repeat="bilet in bilete" ng-class="switchClass(bilet)">
+          {{bilet.descriere}}
+          <div class="buttons">
+            <button class="button ion-close-round" ng-click="stergeBilet(bilet.id)">
+            </button>
+
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="card">
+      <div class="item item-divider">
+        Abonamente
+        <button style="float:right" class="button button-small button-positive" ng-click="showAbForm()">
+          <i class="ion-plus-round"></i>
+        </button>
+      </div>
+      <div class="item-thumbnail">
+
+      </div>
+      <ion-list>
+        <ion-item ng-repeat="abonament in abonamente" ng-class="switchClassAbonament(abonament)">
+          {{abonament.descriere}}
+          <div class="buttons">
+            <button class="button " ng-click="stergeAbonament(abonament.id)">
+              <i class="ion-close-round"></i>
+            </button>
+
+          </div>
+        </ion-item>
+        <!--  <div ng-repeat="ruta in closestRoutes">
+          <div class="card">
+            <div class="item item-divider">
+              Statia: {{ruta.StatieCurenta}}
+            </div>
+            <ion-item ng-repeat="rutaC in ruta.Linii" ng-href="#/app/viewStatieForRuta/{{rutaC.NrLinie}}/{{rutaC.Ruta}}/{{ruta.StatieCurenta.trim()}}/luni-vineri" class="item-thumbnail">
+              {{rutaC.NrLinie}} {{rutaC.Ruta}}
+            </ion-item>
+          </div>
+        </div>
+      -->
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

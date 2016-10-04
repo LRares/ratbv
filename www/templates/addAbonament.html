@@ -1,0 +1,32 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Adauga abonament</h1>
+    <div class="buttons">
+      <button class="button" ng-click="closeAbonament()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content padding="true" scroll="false">
+    <form id="abonamentForm" name="abonamentForm" ng-submit="addAbonament()">
+      <div class="list">
+        <label class="">
+            <span class="input-label">Tip abonament</span>
+        <ion-list>
+            <ion-item class="item-checkbox" ng-repeat="item in tipuriAbonamente">
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="item.checked" ng-click="updateSelection($index, tipuriAbonamente, item.name)" ng-required>
+                </label>
+                {{ item.name }}
+            </ion-item>
+        </ion-list>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">De la data</span>
+          <input type="text" name="date" placeholder="alegeti data"  onfocus="(this.type='date')" ng-model="abonament.date"  ng-required>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Adauga abonament</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
